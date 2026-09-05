@@ -1040,7 +1040,7 @@ The goal was to explore a harder question:
 PayResolve answers that with:
 
 **AI reasoning + deterministic policy + bounded execution + verified outcomes.**
-
+vedio :https://www.kapwing.com/videos/6a9c6262b0c7df552b0743fe
 ---
 
 <div align="center">
