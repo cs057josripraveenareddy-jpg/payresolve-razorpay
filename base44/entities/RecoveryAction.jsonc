@@ -1,0 +1,91 @@
+{
+  "name": "RecoveryAction",
+  "type": "object",
+  "properties": {
+    "payment_id": {
+      "type": "string",
+      "title": "Payment ID"
+    },
+    "order_id": {
+      "type": "string",
+      "title": "Order ID"
+    },
+    "action_type": {
+      "type": "string",
+      "enum": [
+        "retry",
+        "manual_followup",
+        "customer_outreach",
+        "none"
+      ],
+      "title": "Action Type"
+    },
+    "environment": {
+      "type": "string",
+      "enum": [
+        "demo_simulation",
+        "razorpay_test"
+      ],
+      "title": "Environment",
+      "default": "demo_simulation"
+    },
+    "ai_recommendation": {
+      "type": "string",
+      "title": "AI Recommendation"
+    },
+    "ai_confidence": {
+      "type": "number",
+      "title": "AI Confidence"
+    },
+    "ai_reason": {
+      "type": "string",
+      "title": "AI Reason"
+    },
+    "safety_status": {
+      "type": "string",
+      "enum": [
+        "allowed",
+        "blocked"
+      ],
+      "title": "Safety Status"
+    },
+    "safety_reasons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "title": "Safety Reasons"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "executed",
+        "successful",
+        "failed",
+        "blocked",
+        "stopped"
+      ],
+      "title": "Status"
+    },
+    "revenue_recovered": {
+      "type": "number",
+      "title": "Revenue Recovered",
+      "default": 0
+    },
+    "executed_at": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Executed At"
+    },
+    "executed_by": {
+      "type": "string",
+      "title": "Executed By"
+    }
+  },
+  "required": [
+    "payment_id",
+    "action_type",
+    "status"
+  ]
+}

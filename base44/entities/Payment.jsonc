@@ -1,0 +1,145 @@
+{
+  "name": "Payment",
+  "type": "object",
+  "properties": {
+    "payment_id": {
+      "type": "string",
+      "title": "Payment ID",
+      "description": "External payment reference e.g. pay_001"
+    },
+    "order_id": {
+      "type": "string",
+      "title": "Order ID"
+    },
+    "amount": {
+      "type": "number",
+      "title": "Amount"
+    },
+    "currency": {
+      "type": "string",
+      "title": "Currency",
+      "default": "INR"
+    },
+    "payment_method": {
+      "type": "string",
+      "enum": [
+        "upi",
+        "card",
+        "netbanking",
+        "wallet"
+      ],
+      "title": "Payment Method"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "successful",
+        "failed",
+        "pending",
+        "refunded"
+      ],
+      "title": "Status"
+    },
+    "failure_category": {
+      "type": "string",
+      "enum": [
+        "timeout",
+        "bank_issue",
+        "insufficient_funds",
+        "network_error",
+        "declined",
+        "expired_card",
+        "processor_error",
+        "none",
+        "pending_review"
+      ],
+      "title": "Failure Category"
+    },
+    "failure_reason": {
+      "type": "string",
+      "title": "Failure Reason"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Created At"
+    },
+    "retry_count": {
+      "type": "number",
+      "title": "Retry Count",
+      "default": 0
+    },
+    "previous_retry_result": {
+      "type": "string",
+      "enum": [
+        "none",
+        "successful",
+        "failed"
+      ],
+      "title": "Previous Retry Result",
+      "default": "none"
+    },
+    "refund_status": {
+      "type": "string",
+      "enum": [
+        "none",
+        "partial",
+        "full"
+      ],
+      "title": "Refund Status",
+      "default": "none"
+    },
+    "refund_amount": {
+      "type": "number",
+      "title": "Refund Amount",
+      "default": 0
+    },
+    "customer_name": {
+      "type": "string",
+      "title": "Customer Name"
+    },
+    "customer_email": {
+      "type": "string",
+      "title": "Customer Email"
+    },
+    "recovery_status": {
+      "type": "string",
+      "enum": [
+        "none",
+        "identified",
+        "recommended",
+        "safety_validated",
+        "approved",
+        "executed",
+        "successful",
+        "failed",
+        "blocked",
+        "stopped"
+      ],
+      "title": "Recovery Status",
+      "default": "none"
+    },
+    "recovered": {
+      "type": "boolean",
+      "title": "Recovered",
+      "default": false
+    },
+    "recovered_amount": {
+      "type": "number",
+      "title": "Recovered Amount",
+      "default": 0
+    },
+    "is_synthetic": {
+      "type": "boolean",
+      "title": "Synthetic Demo Data",
+      "default": true
+    }
+  },
+  "required": [
+    "payment_id",
+    "order_id",
+    "amount",
+    "payment_method",
+    "status"
+  ]
+}

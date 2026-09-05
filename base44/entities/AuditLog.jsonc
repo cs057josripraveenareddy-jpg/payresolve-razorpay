@@ -1,0 +1,42 @@
+
+{
+  "name": "AuditLog",
+  "type": "object",
+  "properties": {
+    "payment_id": {
+      "type": "string",
+      "title": "Payment ID"
+    },
+    "action": {
+      "type": "string",
+      "title": "Action"
+    },
+    "details": {
+      "type": "string",
+      "title": "Details"
+    },
+    "actor": {
+      "type": "string",
+      "title": "Actor",
+      "default": "system"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "identification",
+        "analysis",
+        "recommendation",
+        "safety",
+        "approval",
+        "execution",
+        "outcome",
+        "manual"
+      ],
+      "title": "Category"
+    }
+  },
+  "required": [
+    "payment_id",
+    "action"
+  ]
+}
